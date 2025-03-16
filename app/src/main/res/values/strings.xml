@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">training_manager</string>
+    <string name="todo">TODO</string>
 </resources>
