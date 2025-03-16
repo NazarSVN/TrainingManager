@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">training_manager</string>
     <string name="todo">TODO</string>
+    <string name="text_who_we_are">
+    Хто ми такі?
+    </string>
+
+    <string name="text_who_we_are_2">
+    Ми команда Active Gear, яка допоможе тобі добитися твоїх спортивних цілей
+    </string>
 </resources>

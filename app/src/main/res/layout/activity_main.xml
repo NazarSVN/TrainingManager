@@ -1,19 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="false"
+    tools:context=".MainActivity"
+    android:background="@drawable/red_border">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#1B1D1B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/human_img"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/human_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="393:230"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text_who_we_are"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_who_we_are"
+        android:textAppearance="@style/text_who_we_are"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
+        android:textAlignment="center"
+        android:fontFamily="@font/jura_bold"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.05  "
+        android:paddingStart="18dp"
+        tools:ignore="RtlSymmetry"
+        />
+
+    <TextView
+        android:id="@+id/text_who_we_are_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_who_we_are_2"
+        android:textAppearance="@style/text_who_we_are_2"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/jura"
+        app:layout_constraintVertical_bias="0.6"
+        tools:ignore="RtlCompat,RtlSymmetry"
+        android:paddingStart="20dp"
+        android:paddingEnd="24dp"
+        android:lineSpacingExtra="2dp"/>
+
+    <ImageButton
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/btn_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-50dp"
+        android:layout_marginEnd="-45dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
