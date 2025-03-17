@@ -43,4 +43,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.core.splashscreen)
     implementation (libs.constraintlayout.v221)
+    implementation (libs.viewpager2)
+
 }

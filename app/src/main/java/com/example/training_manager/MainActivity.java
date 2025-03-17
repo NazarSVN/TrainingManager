@@ -7,16 +7,36 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SetFlags();
 
+        ViewPager2 pager = findViewById(R.id.pager);
+        FragmentStateAdapter pageAdapter = new MyAdapter(this);
+        pager.setAdapter(pageAdapter);
+        pager.setPageTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float scaleFactor = 0.7f + (1 - 0.7f) * (1 - Math.abs(position));
+                page.setScaleX(scaleFactor);
+                page.setScaleY(scaleFactor);
+            }
+        });
+
+
+    }
+
+    private void SetFlags() {
         Window window = getWindow();
 
         WindowCompat.setDecorFitsSystemWindows(window, false);
