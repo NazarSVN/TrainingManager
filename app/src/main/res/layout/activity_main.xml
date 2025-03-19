@@ -8,108 +8,62 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     tools:context=".MainActivity"
-    android:background="@color/black">
+    android:background="#1F2720">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-<!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/rectangle_3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#1B1D1B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/human_img"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@drawable/human_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:id="@+id/bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rectangle_10"
+        android:contentDescription="@string/block_new"
+        app:layout_constraintBottom_toBottomOf="@+id/pager"
+        tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/rectangle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="393:230"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/text_who_we_are"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/text_who_we_are"
-        android:textAppearance="@style/text_who_we_are"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
-        android:textAlignment="center"
-        android:fontFamily="@font/jura_bold"
-        app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintHorizontal_bias="0.05  "
-        android:paddingStart="18dp"
-        tools:ignore="RtlSymmetry"
-        />
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/home_menu"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
+        app:layout_constraintTop_toTopOf="@id/bottom_panel"
+        app:layout_constraintStart_toStartOf="@id/bottom_panel"
+        app:layout_constraintHorizontal_bias="0.2" />
 
-    <TextView
-        android:id="@+id/text_who_we_are_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/text_who_we_are_2"
-        android:textAppearance="@style/text_who_we_are_2"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
-        android:textAlignment="textStart"
-        android:fontFamily="@font/jura"
-        app:layout_constraintVertical_bias="0.6"
-        tools:ignore="RtlCompat,RtlSymmetry"
-        android:paddingStart="20dp"
-        android:paddingEnd="24dp"
-        android:lineSpacingExtra="2dp"/>
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/fire_menu"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
+        app:layout_constraintTop_toTopOf="@id/bottom_panel"
+        app:layout_constraintStart_toStartOf="@id/bottom_panel"
+        app:layout_constraintEnd_toEndOf="@id/bottom_panel" />
 
-    <ImageButton
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/btn_next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="-50dp"
-        android:layout_marginEnd="-45dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"/>
-
--->
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/calendar_menu"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
+        app:layout_constraintTop_toTopOf="@id/bottom_panel"
+        app:layout_constraintEnd_toEndOf="@id/bottom_panel"
+        app:layout_constraintHorizontal_bias="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

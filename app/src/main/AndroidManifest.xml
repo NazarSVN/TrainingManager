@@ -12,20 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Training_manager"
         tools:targetApi="31">
-
+        <activity
+            android:name=".FireFragment"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarFragment"
+            android:exported="false" />
+        <activity
+            android:name=".HomeFragment"
+            android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/splash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
     </application>
+
 </manifest>

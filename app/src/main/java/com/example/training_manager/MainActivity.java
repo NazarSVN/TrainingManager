@@ -7,10 +7,12 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -33,7 +35,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /* Создание загрузки форм при нажатии
+        loadFragment(new HomeFragment());
 
+        // Находим иконки
+        ImageView iconHome = findViewById(R.id.image1);
+        ImageView iconHot = findViewById(R.id.image2);
+        ImageView iconCalendar = findViewById(R.id.image3);
+
+        // Устанавливаем обработчики нажатий
+        iconHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new HomeFragment());
+            }
+        });
+
+        iconHot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new FireFragment()
+                );
+            }
+        });
+
+        iconCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new CalendarFragment());
+            }
+        });
+        */
     }
 
     private void SetFlags() {
@@ -62,5 +94,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+    }
+
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }
