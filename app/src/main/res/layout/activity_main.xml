@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     tools:context=".MainActivity"
-    android:background="@drawable/red_border">
+    android:background="@color/black">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"

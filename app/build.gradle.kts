@@ -42,7 +42,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.core.splashscreen)
-    implementation (libs.constraintlayout.v221)
     implementation (libs.viewpager2)
-
+    implementation ("com.android.support.constraint:constraint-layout:1.1.3")
 }

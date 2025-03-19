@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F2720">
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:gravity="center"
+        android:text="@string/some_id"
+        android:textAppearance="@style/some_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/vector_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/jura_bold"
+        android:text="@string/select_gender"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/jura"
+        android:text="@string/subtitle_for_gender"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_subtitle"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/rectangle_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="130dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/rectangle_8"
+        app:layout_constraintTop_toBottomOf="@id/barrier_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rectangle_9"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/rectangle_9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="130dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rectangle_8"
+        app:layout_constraintTop_toBottomOf="@id/barrier_subtitle"
+        app:layout_constraintStart_toEndOf="@id/rectangle_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/man"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/jura_bold"
+        app:layout_constraintTop_toTopOf="@id/rectangle_8"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle_8"
+        app:layout_constraintStart_toStartOf="@id/rectangle_8"
+        app:layout_constraintEnd_toEndOf="@id/rectangle_8"
+        />
+
+    <TextView
+        android:id="@+id/text_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/woman"
+        android:textSize="24sp"
+        android:fontFamily="@font/jura_bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="@id/rectangle_9"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle_9"
+        app:layout_constraintStart_toStartOf="@id/rectangle_9"
+        app:layout_constraintEnd_toEndOf="@id/rectangle_9"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,5 +24,14 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <style name="some_id">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#B5D48C</item>
+        <item name="android:shadowColor">#B5D48C</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">100</item>
+    </style>
+
 
 </resources>

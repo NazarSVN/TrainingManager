@@ -39,21 +39,11 @@ public class PageFragment  extends Fragment {
             case 1:
                 layoutId = R.layout.onboarding_screen_2;
                 break;
+            case 2:
+                layoutId = R.layout.onboarding_screen_3;
+                break;
         }
 
-        View result = inflater.inflate(layoutId, container, false);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView pageHeader = result.findViewById(R.id.displayText);
-        String header = "Фрагмент " + (pageNumber + 1);
-        pageHeader.setText(header);
-        return result;
+        return inflater.inflate(layoutId, container, false);
     }
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View result = inflater.inflate(R.layout.onboarding_screen_1, container, false);
-//        TextView pageHeader = result.findViewById(R.id.displayText);
-//        String header = "Фрагмент " + (pageNumber+1);
-//        pageHeader.setText(header);
-//        return result;
-//    }
 }

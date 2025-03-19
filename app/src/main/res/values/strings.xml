@@ -8,4 +8,10 @@
     <string name="text_who_we_are_2">
     Ми команда Active Gear, яка допоможе тобі добитися твоїх спортивних цілей
     </string>
+    <string name="woman">Жінка</string>
+    <string name="man">Чоловік</string>
+    <string name="select_gender">Виберіть свій пол</string>
+    <string name="subtitle_for_gender">Виберіть одну з наведених відповідей нижче</string>
+    <string name="logo">Логотип ActiveGear</string>
+    <string name="some_id">#1</string>
 </resources>
