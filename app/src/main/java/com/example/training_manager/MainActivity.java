@@ -1,5 +1,6 @@
 package com.example.training_manager;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,12 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager2 pager = findViewById(R.id.pager);
         FragmentStateAdapter pageAdapter = new MyAdapter(this);
+        pager.setAdapter(pageAdapter);
+        Set<Integer> noSwipePages = new HashSet<>(Arrays.asList(2, 3, 4, 5, 6));
+
+        pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                pager.setUserInputEnabled(!noSwipePages.contains(position));
+            }
+        });
+
         pager.setAdapter(pageAdapter);
         pager.setPageTransformer(new ViewPager2.PageTransformer() {
             @Override

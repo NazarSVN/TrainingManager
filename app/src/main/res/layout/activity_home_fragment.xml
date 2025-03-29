@@ -9,9 +9,10 @@
     android:background="#1F2720">
 
     <LinearLayout
+        android:id="@+id/name_and_avatar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="16dp"
         android:gravity="center_vertical"
         tools:ignore="MissingConstraints">
@@ -22,13 +23,13 @@
             android:layout_height="60dp"
             android:src="@drawable/avatar"
             android:scaleType="centerCrop" />
-
         <TextView
             android:id="@+id/helloText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello, Vlad"
             android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
             android:textSize="22sp"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/jura_bold"/>
@@ -43,7 +44,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/name_and_avatar"
         tools:ignore="NotSibling"
         >
 
@@ -103,7 +104,7 @@
             android:layout_height="wrap_content"
             android:text="Пройдено (10%)"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/jura_bold"/>
 
@@ -122,80 +123,149 @@
         android:id="@+id/profileContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/rounded_bg"
-        android:padding="16dp"
         android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_bg"
         android:fontFamily="@font/jura_bold"
-        app:layout_constraintTop_toBottomOf="@id/progressContainer"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressContainer">
 
-        <LinearLayout
-            android:layout_width="134dp"
-            android:layout_height="33dp"
-            android:background="@drawable/rectangle_2"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="134dp"
+                android:layout_height="33dp"
+                android:background="@drawable/rectangle_2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="-20dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/icon_profile"
+                    android:src="@drawable/icon_person" />
+
+                <TextView
+                    android:id="@+id/profileTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-10dp"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="@string/profile"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginStart="-20dp"
-                android:layout_marginEnd="20dp"
-                android:contentDescription="@string/icon_profile"
-                android:src="@drawable/icon_person" />
+                android:id="@+id/editProfileIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icon_edit"
+                android:contentDescription="@string/edit_profile"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp"
+                android:layout_centerVertical="true"/>
 
-            <TextView
-                android:id="@+id/profileTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-10dp"
-                android:fontFamily="@font/jura_bold"
-                android:text="@string/profile"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-        </LinearLayout>
-
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/jura_bold"
             android:text="Назаренко Владислав"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/jura_bold"/>
+            android:textSize="34sp" />
 
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="85 kg"
-            android:textColor="#C3FF00"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/jura_bold"/>
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/height"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="183 cm"
-            android:textColor="#C3FF00"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/jura_bold"/>
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="85kg"
+                    android:textColor="#C3FF00"
+                    android:textSize="40sp" />
 
-        <TextView
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="17 year"
-            android:textColor="#C3FF00"
-            android:textSize="16sp"
-            android:fontFamily="@font/jura_bold"/>
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="183cm"
+                    android:textColor="#C3FF00"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="17year"
+                    android:textColor="#C3FF00"
+                    android:textSize="40sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                >
+
+                <TextView
+                    android:id="@+id/weight_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="Вага"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:gravity="bottom"/>
+
+                <TextView
+                    android:id="@+id/height_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="Ріст"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:gravity="bottom"/>
+
+                <TextView
+                    android:id="@+id/age_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura_bold"
+                    android:layout_weight="1"
+                    android:text="Вік"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:gravity="bottom"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

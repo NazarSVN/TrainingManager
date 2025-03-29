@@ -31,8 +31,13 @@ android {
     }
 }
 
-dependencies {
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
 
+dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -44,4 +49,7 @@ dependencies {
     implementation(libs.core.splashscreen)
     implementation (libs.viewpager2)
     implementation ("com.android.support.constraint:constraint-layout:1.1.3")
+
+    implementation ("io.github.ShawnLin013:number-picker:2.4.13")
+
 }

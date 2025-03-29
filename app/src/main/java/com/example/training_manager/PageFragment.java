@@ -2,15 +2,23 @@ package com.example.training_manager;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.shawnlin.numberpicker.NumberPicker;
 
 public class PageFragment  extends Fragment {
     private int pageNumber;
+    public PollManager pollManager = new PollManager();
+
 
     public static PageFragment newInstance(int page) {
         PageFragment fragment = new PageFragment();
@@ -42,8 +50,216 @@ public class PageFragment  extends Fragment {
             case 2:
                 layoutId = R.layout.onboarding_screen_3;
                 break;
+            case 3:
+                layoutId = R.layout.onboarding_screen_4;
+                break;
+            case 4:
+                layoutId = R.layout.onboarding_screen_5;
+                break;
+            case 5:
+                layoutId = R.layout.onboarding_screen_6;
+                break;
+            case 6:
+                layoutId = R.layout.onboarding_screen_7;
         }
 
-        return inflater.inflate(layoutId, container, false);
+        View view = inflater.inflate(layoutId, container, false);
+        ViewPager2 pager = requireActivity().findViewById(R.id.pager);
+
+        SetGender(view, pager);
+        SetName(view, pager);
+        SetYearBirthday(view, pager);
+        SetWeight(view, pager);
+        SetHeight(view, pager);
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageButton nextButton = view.findViewById(R.id.next_button);
+        if (nextButton != null) {
+            nextButton.setOnClickListener(v -> {
+                pager.setCurrentItem(pageNumber + 1, true);
+            });
+        }
+
+        return view;
+    }
+
+    public void SetHeight(View view, ViewPager2 pager) {
+        NumberPicker picker = view.findViewById(R.id.height_picker);
+        ImageButton newPage = view.findViewById(R.id.next_button_check_height);
+
+        ImageButton upButton = view.findViewById(R.id.button_top_height);
+        ImageButton downButton = view.findViewById(R.id.button_bottom_height);
+
+        if (picker == null) {
+            return;
+        }
+
+        String[] data = new String[]{
+                "130", "131", "132", "133", "134", "135", "136", "137", "138", "139",
+                "140", "141", "142", "143", "144", "145", "146", "147", "148", "149",
+                "150", "151", "152", "153", "154", "155", "156", "157", "158", "159",
+                "160", "161", "162", "163", "164", "165", "166", "167", "168", "169",
+                "170", "171", "172", "173", "174", "175", "176", "177", "178", "179",
+                "180", "181", "182", "183", "184", "185", "186", "187", "188", "189",
+                "190", "191", "192", "193", "194", "195", "196", "197", "198", "199",
+                "200", "201", "202", "203", "204", "205", "206", "207", "208", "209",
+                "210", "211", "212", "213", "214", "215", "216", "217", "218", "219",
+                "220"
+        };
+
+        picker.setMinValue(0);
+        picker.setMaxValue(data.length - 1);
+        picker.setValue(data.length-1);
+        picker.setDisplayedValues(data);
+
+        newPage.setOnClickListener(v -> {
+            int value = picker.getValue();
+            pollManager.Height = data[value];
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        upButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()-1);
+        });
+
+        downButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()+1);
+        });
+    }
+
+    public void SetWeight(View view, ViewPager2 pager){
+        NumberPicker picker = view.findViewById(R.id.weight_picker);
+        ImageButton newPage = view.findViewById(R.id.next_button_check_weight);
+
+        ImageButton upButton = view.findViewById(R.id.button_top_weight);
+        ImageButton downButton = view.findViewById(R.id.button_bottom_weight);
+
+        if (picker == null) {
+            return;
+        }
+
+        String[] data = new String[]{
+                "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60",
+                "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76",
+                "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92",
+                "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107",
+                "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121",
+                "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135",
+                "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149",
+                "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163",
+                "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177",
+                "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191",
+                "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205",
+                "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219",
+                "220"
+        };
+
+        picker.setMinValue(0);
+        picker.setMaxValue(data.length - 1);
+        picker.setValue(data.length-1);
+        picker.setDisplayedValues(data);
+
+        newPage.setOnClickListener(v -> {
+            int value = picker.getValue();
+            pollManager.Weight = data[value];
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        upButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()-1);
+        });
+
+        downButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()+1);
+        });
+    }
+
+    public void SetYearBirthday(View view, ViewPager2 pager){
+        NumberPicker picker = view.findViewById(R.id.number_picker);
+        ImageButton newPage = view.findViewById(R.id.next_button_check_birthday);
+
+        ImageButton upButton = view.findViewById(R.id.button_top);
+        ImageButton downButton = view.findViewById(R.id.button_bottom);
+
+        if (picker == null) {
+            return;
+        }
+
+        String[] data = new String[]{
+                "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969",
+                "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978",
+                "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987",
+                "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996",
+                "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005",
+                "2006", "2007", "2008", "2009", "2010", "2011"
+        };
+
+        picker.setMinValue(0);
+        picker.setMaxValue(data.length - 1);
+        picker.setValue(data.length-1);
+        picker.setDisplayedValues(data);
+
+        newPage.setOnClickListener(v -> {
+            int value = picker.getValue();
+            pollManager.YearBirthday = data[value];
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        upButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()-1);
+        });
+
+        downButton.setOnClickListener(v -> {
+            picker.setValue(picker.getValue()+1);
+        });
+    }
+
+    public void SetName(View view, ViewPager2 pager){
+        EditText editText = view.findViewById(R.id.editTextName);
+        ImageButton imageButton = view.findViewById(R.id.next_button_check_name);
+
+        if (imageButton != null && editText != null && pollManager != null) {
+            imageButton.setVisibility(View.INVISIBLE);
+            imageButton.setEnabled(false);
+        }
+        else {
+            return;
+        }
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int after) {
+            String newText = charSequence.toString().trim();
+                if (!newText.isEmpty()) {
+                    imageButton.setEnabled(true);
+                    imageButton.setVisibility(View.VISIBLE);
+                    imageButton.setOnClickListener(v -> {
+                        pager.setCurrentItem(pageNumber + 1, true);
+                        pollManager.Name = newText;
+                    });
+                }
+                else{
+                    imageButton.setVisibility(View.INVISIBLE);
+                    imageButton.setEnabled(false);
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    public void SetGender(View view, ViewPager2 pager){
+        View maleButton = view.findViewById(R.id.male_button);
+        View femaleButton = view.findViewById(R.id.female_button);
+
+        if (maleButton != null && pollManager != null) {
+            maleButton.setOnClickListener(v -> pollManager.onClickMaleGender(pager, pageNumber));
+        }
+
+        if (femaleButton != null && pollManager != null) {
+            femaleButton.setOnClickListener(v -> pollManager.onClickFemaleGender(pager, pageNumber));
+        }
     }
 }

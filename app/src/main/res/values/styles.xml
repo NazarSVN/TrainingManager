@@ -32,6 +32,4 @@
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">100</item>
     </style>
-
-
 </resources>

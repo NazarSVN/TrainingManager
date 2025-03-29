@@ -22,48 +22,48 @@
         android:layout_weight="1"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/bottom_panel"
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/rectangle_10"
-        android:contentDescription="@string/block_new"
-        app:layout_constraintBottom_toBottomOf="@+id/pager"
-        tools:ignore="MissingConstraints" />
+<!--    <ImageView-->
+<!--        android:id="@+id/bottom_panel"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:background="@drawable/rectangle_10"-->
+<!--        android:contentDescription="@string/block_new"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/pager"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
 
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:contentDescription="@string/menu"
-        android:src="@drawable/home_menu"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
-        app:layout_constraintTop_toTopOf="@id/bottom_panel"
-        app:layout_constraintStart_toStartOf="@id/bottom_panel"
-        app:layout_constraintHorizontal_bias="0.2" />
+<!--    <ImageView-->
+<!--        android:id="@+id/image1"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:contentDescription="@string/menu"-->
+<!--        android:src="@drawable/home_menu"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"-->
+<!--        app:layout_constraintTop_toTopOf="@id/bottom_panel"-->
+<!--        app:layout_constraintStart_toStartOf="@id/bottom_panel"-->
+<!--        app:layout_constraintHorizontal_bias="0.2" />-->
 
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:contentDescription="@string/menu"
-        android:src="@drawable/fire_menu"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
-        app:layout_constraintTop_toTopOf="@id/bottom_panel"
-        app:layout_constraintStart_toStartOf="@id/bottom_panel"
-        app:layout_constraintEnd_toEndOf="@id/bottom_panel" />
+<!--    <ImageView-->
+<!--        android:id="@+id/image2"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:contentDescription="@string/menu"-->
+<!--        android:src="@drawable/fire_menu"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"-->
+<!--        app:layout_constraintTop_toTopOf="@id/bottom_panel"-->
+<!--        app:layout_constraintStart_toStartOf="@id/bottom_panel"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/bottom_panel" />-->
 
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:contentDescription="@string/menu"
-        android:src="@drawable/calendar_menu"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"
-        app:layout_constraintTop_toTopOf="@id/bottom_panel"
-        app:layout_constraintEnd_toEndOf="@id/bottom_panel"
-        app:layout_constraintHorizontal_bias="0.8" />
+<!--    <ImageView-->
+<!--        android:id="@+id/image3"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:contentDescription="@string/menu"-->
+<!--        android:src="@drawable/calendar_menu"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/bottom_panel"-->
+<!--        app:layout_constraintTop_toTopOf="@id/bottom_panel"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/bottom_panel"-->
+<!--        app:layout_constraintHorizontal_bias="0.8" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
