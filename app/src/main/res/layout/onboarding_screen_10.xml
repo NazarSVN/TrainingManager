@@ -12,7 +12,7 @@
         android:layout_width="124dp"
         android:layout_height="124dp"
         android:gravity="center"
-        android:text="#5"
+        android:text="#8"
         android:fontFamily="@font/jura_bold"
         android:textAppearance="@style/some_id"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,14 +33,14 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
         android:fontFamily="@font/jura_bold"
-        android:text="Вкажіть ваш зріст"
+        android:text="Вкажіть вашу максимальну вагу у жимі лежачи  (кг)"
         android:textColor="@android:color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"/>
 
     <ImageButton
-        android:id="@+id/next_button_check_height"
+        android:id="@+id/next_button_benchpress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/subtitle">
 
         <ImageButton
-            android:id="@+id/button_top_height"
+            android:id="@+id/button_top_benchpress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -96,7 +96,7 @@
             />
 
         <com.shawnlin.numberpicker.NumberPicker
-            android:id="@+id/height_picker"
+            android:id="@+id/benchpress_picker"
             android:layout_width="wrap_content"
             android:layout_height="220dp"
             android:dividerPadding="10dp"
@@ -114,7 +114,7 @@
             app:np_width="64dp" />
 
         <ImageButton
-            android:id="@+id/button_bottom_height"
+            android:id="@+id/button_bottom_benchpress"
             android:layout_width="wrap_content"
             android:background="@drawable/downbutton"
             android:layout_height="wrap_content"

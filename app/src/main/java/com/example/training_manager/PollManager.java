@@ -9,6 +9,12 @@ public class PollManager extends AppCompatActivity {
     public String YearBirthday = "";
     public String Weight = "";
     public String Height = "";
+    public String Goal = "";
+    public String Experience = "";
+    public String BenchPress = "";
+    public String Deadlift = "";
+    public String Squat= "";
+    public String PercentFat = "";
 
 
     public void onClickMaleGender(ViewPager2 pager, int pageNumber) {

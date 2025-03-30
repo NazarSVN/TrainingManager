@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F2720">
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:gravity="center"
+        android:text="#7"
+        android:fontFamily="@font/jura_bold"
+        android:textAppearance="@style/some_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/vector_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/jura_bold"
+        android:text="Вкажіть ваш рівень досвіду"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/jura"
+        android:text="@string/subtitle_for_gender"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_subtitle"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#1F2720"
+        android:columnCount="2"
+        android:padding="16dp"
+        android:rowCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier_subtitle">
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/NewcomerButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#2E3730"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Новачок"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/jura"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="тільки вчиться техніці, не має системи тренувань."
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/jura"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#2E3730"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            android:id="@+id/BaseButton"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Базовий"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/jura"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="знає вправи, працює за програмою, прогресує."
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/jura"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#2E3730"
+            app:cardElevation="4dp"
+            android:id="@+id/AdvancedButton"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Просунутий"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/jura"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="контролює навантаження, харчування, знає методики."
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/jura"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#2E3730"
+            app:cardElevation="4dp"
+            android:id="@+id/ProButton"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Профі"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/jura"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="тренується з чіткою метою, глибоко розбирається у спорті."
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/jura"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

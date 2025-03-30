@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2 pager = findViewById(R.id.pager);
         FragmentStateAdapter pageAdapter = new MyAdapter(this);
         pager.setAdapter(pageAdapter);
-        Set<Integer> noSwipePages = new HashSet<>(Arrays.asList(2, 3, 4, 5, 6));
+        Set<Integer> noSwipePages = new HashSet<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
 
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
