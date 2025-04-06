@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.core.splashscreen)
     implementation (libs.viewpager2)
     implementation ("com.android.support.constraint:constraint-layout:1.1.3")
+    implementation (libs.material.v140)
 
     implementation ("io.github.ShawnLin013:number-picker:2.4.13")
 

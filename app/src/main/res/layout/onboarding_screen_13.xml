@@ -108,6 +108,7 @@
             android:progressTint="#E2F560"
             android:thumbTint="#D4FC79" />
         <TextView
+            android:id="@+id/next_button_to_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
@@ -121,7 +122,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/next_button_procent_fat"
+        android:id="@+id/end_button_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"

@@ -20,8 +20,7 @@ import com.shawnlin.numberpicker.NumberPicker;
 
 public class PageFragment  extends Fragment {
     private int pageNumber;
-    public PollManager pollManager = new PollManager();
-
+    public PollManager pollManager;
 
     public static PageFragment newInstance(int page) {
         PageFragment fragment = new PageFragment();
@@ -31,14 +30,15 @@ public class PageFragment  extends Fragment {
         return fragment;
     }
 
-    public PageFragment() {
-    }
+    public PageFragment() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pollManager = PollManager.getInstance();
         pageNumber = getArguments() != null ? getArguments().getInt("num") : 1;
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -82,11 +82,57 @@ public class PageFragment  extends Fragment {
                 break;
             case 12:
                 layoutId = R.layout.onboarding_screen_13;
+                break;
+            case 13:
+                layoutId = R.layout.onboarding_screen_14;
+                break;
+            case 14:
+                layoutId = R.layout.onboarding_screen_15;
+                break;
+            case 15:
+                layoutId = R.layout.onboarding_screen_16;
+                break;
+            case 16:
+                layoutId = R.layout.onboarding_screen_17;
+                break;
+            case 17:
+                layoutId = R.layout.onboarding_screen_18;
+                break;
+            case 18:
+                layoutId = R.layout.onboarding_screen_18;
         }
 
         View view = inflater.inflate(layoutId, container, false);
         ViewPager2 pager = requireActivity().findViewById(R.id.pager);
 
+        SetingPollManager(view, pager);
+
+        TextView tv = view.findViewById(R.id.percentage);
+        if (tv != null)
+            tv.setText(pollManager.PercentFat);
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageButton imageButton = view.findViewById(R.id.end_button_exit);
+        if (imageButton != null) {
+            imageButton.setOnClickListener(v -> {
+                ViewPager2 thisView = getActivity().findViewById(R.id.pager);
+                if (thisView != null) {
+                    thisView.setVisibility(View.GONE);
+                }
+            });
+        }
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageButton nextButton = view.findViewById(R.id.next_button);
+        if (nextButton != null) {
+            nextButton.setOnClickListener(v -> {
+                pager.setCurrentItem(pageNumber + 1, true);
+            });
+        }
+        return view;
+    }
+
+    private void SetingPollManager(View view, ViewPager2 pager) {
         SetGender(view, pager);
         SetName(view, pager);
         SetYearBirthday(view, pager);
@@ -98,21 +144,140 @@ public class PageFragment  extends Fragment {
         SetDeadliftResult(view, pager);
         SetSquatResult(view, pager);
         SetProcentFat(view, pager);
+        SetPres(view, pager);
+        SetLookOfMuscles(view, pager);
+        SetWaistShape(view, pager);
+        SetVeins(view, pager);
+    }
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        ImageButton nextButton = view.findViewById(R.id.next_button);
-        if (nextButton != null) {
-            nextButton.setOnClickListener(v -> {
-                pager.setCurrentItem(pageNumber + 1, true);
-            });
-        }
+    public void SetVeins(View view, ViewPager2 pager) {
+        CardView LotOfVeins = view.findViewById(R.id.LotOfVeins);
+        CardView VeinsTenseUp = view.findViewById(R.id.VeinsTenseUp);
+        CardView AlmostInvisible = view.findViewById(R.id.AlmostInvisible);
+        CardView NotVisible = view.findViewById(R.id.NotVisible);
 
-        return view;
+        if (LotOfVeins==null && VeinsTenseUp==null && AlmostInvisible==null && NotVisible==null)
+            return;
+
+        LotOfVeins.setOnClickListener(v -> {
+            pollManager.Veins = 1;
+            pager.setCurrentItem(pageNumber + 1, true);
+            pollManager.CalculateBodyFat();
+        });
+
+        VeinsTenseUp.setOnClickListener(v -> {
+            pollManager.Veins = 2;
+            pager.setCurrentItem(pageNumber + 1, true);
+            pollManager.CalculateBodyFat();
+        });
+
+        AlmostInvisible.setOnClickListener(v -> {
+            pollManager.Veins = 3;
+            pager.setCurrentItem(pageNumber + 1, true);
+            pollManager.CalculateBodyFat();
+        });
+
+        NotVisible.setOnClickListener(v -> {
+            pollManager.Veins = 4;
+            pager.setCurrentItem(pageNumber + 1, true);
+            pollManager.CalculateBodyFat();
+        });
+    }
+
+    public void SetWaistShape(View view, ViewPager2 pager){
+        CardView NoFatFlanks = view.findViewById(R.id.NoFatFlanks);
+        CardView LowFatFlanks = view.findViewById(R.id.LowFatFlanks);
+        CardView MiddleFlatFlanks = view.findViewById(R.id.MiddleFlatFlanks);
+        CardView BigFatFlanks = view.findViewById(R.id.BigFatFlanks);
+
+        if (NoFatFlanks==null && LowFatFlanks==null && MiddleFlatFlanks==null && BigFatFlanks==null)
+            return;
+
+        NoFatFlanks.setOnClickListener(v -> {
+            pollManager.WaistShape = 1;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        LowFatFlanks.setOnClickListener(v -> {
+            pollManager.WaistShape = 2;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        MiddleFlatFlanks.setOnClickListener(v -> {
+            pollManager.WaistShape = 3;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        BigFatFlanks.setOnClickListener(v -> {
+            pollManager.WaistShape = 4;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+    }
+
+    public void SetLookOfMuscles(View view, ViewPager2 pager){
+        CardView VeryEmbossed = view.findViewById(R.id.VeryEmbossed);
+        CardView lightRelief = view.findViewById(R.id.Embossed);
+        CardView NotEmbossed = view.findViewById(R.id.NotEmbossed);
+        CardView VerySoft = view.findViewById(R.id.VerySoft);
+
+        if (VeryEmbossed==null && lightRelief==null && NotEmbossed==null && VerySoft==null)
+            return;
+
+        VeryEmbossed.setOnClickListener(v -> {
+            pollManager.LookOfMuscles = 1;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        lightRelief.setOnClickListener(v -> {
+            pollManager.LookOfMuscles = 2;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        NotEmbossed.setOnClickListener(v -> {
+            pollManager.LookOfMuscles = 3;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        VerySoft.setOnClickListener(v -> {
+            pollManager.LookOfMuscles = 4;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+    }
+
+    public void SetPres(View view, ViewPager2 pager){
+        CardView press = view.findViewById(R.id.yes_press);
+        CardView lightRelief = view.findViewById(R.id.light_relief);
+        CardView dontSeePres = view.findViewById(R.id.dont_see_pres);
+        CardView bigPuso = view.findViewById(R.id.big_puso);
+
+        if (press==null && lightRelief==null && dontSeePres==null && bigPuso==null)
+            return;
+
+        press.setOnClickListener(v -> {
+            pollManager.PressVisibility = 1;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        lightRelief.setOnClickListener(v -> {
+            pollManager.PressVisibility = 2;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        dontSeePres.setOnClickListener(v -> {
+            pollManager.PressVisibility = 3;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
+
+        bigPuso.setOnClickListener(v -> {
+            pollManager.PressVisibility = 4;
+            pager.setCurrentItem(pageNumber + 1, true);
+        });
     }
 
     public void SetProcentFat(View view, ViewPager2 pager){
         SeekBar seekBar = view.findViewById(R.id.seekBar);
         TextView tvPercentage = view.findViewById(R.id.tvPercentage);
+        TextView goTest = view.findViewById(R.id.next_button_to_test);
 
         if (seekBar == null && tvPercentage == null)
             return;
@@ -127,6 +292,10 @@ public class PageFragment  extends Fragment {
             public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
+        goTest.setOnClickListener(v -> {
+            pager.setCurrentItem(pageNumber + 1, true);
         });
     }
 

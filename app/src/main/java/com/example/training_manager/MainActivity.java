@@ -4,13 +4,14 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
 import androidx.fragment.app.Fragment;
@@ -28,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SetFlags();
+        ShowMainPage();
+//        FirstTestPager();
+    }
 
+    private void FirstTestPager() {
         ViewPager2 pager = findViewById(R.id.pager);
         FragmentStateAdapter pageAdapter = new MyAdapter(this);
         pager.setAdapter(pageAdapter);
-        Set<Integer> noSwipePages = new HashSet<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+        Set<Integer> noSwipePages = new HashSet<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18));
 
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -43,46 +48,41 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pager.setAdapter(pageAdapter);
-        pager.setPageTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float scaleFactor = 0.7f + (1 - 0.7f) * (1 - Math.abs(position));
-                page.setScaleX(scaleFactor);
-                page.setScaleY(scaleFactor);
-            }
+        pager.setPageTransformer((page, position) -> {
+            float scaleFactor = 0.7f + (1 - 0.7f) * (1 - Math.abs(position));
+            page.setScaleX(scaleFactor);
+            page.setScaleY(scaleFactor);
         });
 
-        /* Создание загрузки форм при нажатии
+        pager.getViewTreeObserver().addOnPreDrawListener(() -> {
+            if (pager.getVisibility() == View.VISIBLE) {
+            } else if (pager.getVisibility() == View.GONE) {
+                ShowMainPage();
+            }
+            return true;
+        });
+    }
+
+    public void ShowMainPage(){
         loadFragment(new HomeFragment());
 
-        // Находим иконки
+        FrameLayout frameLayout = findViewById(R.id.fragment_container);
+        ImageView bottom_panel = findViewById(R.id.bottom_panel);
         ImageView iconHome = findViewById(R.id.image1);
         ImageView iconHot = findViewById(R.id.image2);
         ImageView iconCalendar = findViewById(R.id.image3);
 
-        // Устанавливаем обработчики нажатий
-        iconHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new HomeFragment());
-            }
-        });
+        if (frameLayout != null && bottom_panel != null && iconHome != null && iconHot != null && iconCalendar != null) {
+            frameLayout.setVisibility(View.VISIBLE);
+            bottom_panel.setVisibility(View.VISIBLE);
+            iconHome.setVisibility(View.VISIBLE);
+            iconHot.setVisibility(View.VISIBLE);
+            iconCalendar.setVisibility(View.VISIBLE);
+        }
 
-        iconHot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new FireFragment()
-                );
-            }
-        });
-
-        iconCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new CalendarFragment());
-            }
-        });
-        */
+        iconHome.setOnClickListener(v -> loadFragment(new HomeFragment()));
+        iconHot.setOnClickListener(v -> loadFragment(new FireFragment()));
+        iconCalendar.setOnClickListener(v -> loadFragment(new CalendarFragment()));
     }
 
     private void SetFlags() {

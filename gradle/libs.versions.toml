@@ -4,6 +4,7 @@ androidxConstraintlayout = "2.2.1"
 constraintlayoutVersion = "2.2.0-beta01"
 coreSplashscreen = "1.0.1"
 dotlottieAndroid = "0.5.0"
+googleMaterial = "1.4.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -27,6 +28,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 animation-core-android = { group = "androidx.compose.animation", name = "animation-core-android", version.ref = "animationCoreAndroid" }
+material-v140 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 
 [plugins]
