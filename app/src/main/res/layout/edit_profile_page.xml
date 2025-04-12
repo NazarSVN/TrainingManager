@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1F2720">
+
+    <ImageView
+        android:id="@+id/cancel_btn"
+        android:layout_width="18dp"
+        android:layout_height="38dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/cancel_btn"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/avatar"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_shape"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Блок профиля -->
+    <LinearLayout
+        android:id="@+id/profileContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_bg"
+        android:fontFamily="@font/jura_bold"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        tools:ignore="MissingConstraints">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="134dp"
+            android:layout_height="33dp"
+            android:background="@drawable/rectangle_2"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="-20dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/icon_profile"
+                android:src="@drawable/icon_person" />
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:fontFamily="@font/jura_bold"
+                android:text="@string/profile"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!-- Первый элемент: имя -->
+            <LinearLayout
+                android:id="@id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="Владислав"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/editProfileIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/edit_profile"
+                    android:src="@drawable/icon_edit" />
+            </LinearLayout>
+
+            <!-- Первый элемент: фамилия -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/userSurname">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jura_bold"
+                    android:text="Назаренко"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:id="@+id/tvUserSurname"/>
+                <ImageView
+                    android:id="@+id/editProfileSurname"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_edit"
+                    android:contentDescription="@string/edit_profile"
+                    />
+            </LinearLayout>
+
+            <!-- Первый элемент: Вес -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/userWeight">
+
+                <!-- Число (значение) -->
+                <TextView
+                    android:id="@+id/weight_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="85"
+                    android:textColor="#C3FF00"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="40sp" />
+
+                <!-- Единица измерения -->
+                <TextView
+                    android:id="@+id/weight_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kg"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="4dp"/>
+                <ImageView
+                    android:id="@+id/editProfileWeight"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_edit"
+                    android:contentDescription="@string/edit_profile"
+                    />
+            </LinearLayout>
+
+            <!-- Второй элемент: Рост -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/userHeight">
+
+                <!-- Число (значение) -->
+                <TextView
+                    android:id="@+id/height_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="183"
+                    android:textColor="#C3FF00"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="40sp" />
+
+                <!-- Единица измерения -->
+                <TextView
+                    android:id="@+id/height_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="cm"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="4dp"/>
+
+                <ImageView
+                    android:id="@+id/editProfileHeight"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_edit"
+                    android:contentDescription="@string/edit_profile"
+                    />
+            </LinearLayout>
+
+            <!-- Третий элемент: Возраст -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/userYears">
+
+                <!-- Число (значение) -->
+                <TextView
+                    android:id="@+id/age_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17"
+                    android:textColor="#C3FF00"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="40sp" />
+
+                <!-- Единица измерения -->
+                <TextView
+                    android:id="@+id/age_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="years"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/jura_bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="4dp"/>
+                <ImageView
+                    android:id="@+id/editProfileYears"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_edit"
+                    android:contentDescription="@string/edit_profile"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jura_bold"
+                android:text="Ім'я"
+                android:layout_weight="0.1"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/surname_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jura_bold"
+                android:text="Фамілія"
+                android:layout_weight="0.4"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/weight_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/jura_bold"
+                android:text="Вага"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/height_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/jura_bold"
+                android:text="Ріст"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/age_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jura_bold"
+                android:layout_weight="1"
+                android:text="Вік"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+        </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp">
+
+            <ImageView
+                android:id="@+id/save_image"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/rounded_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Зберегти"
+                android:textColor="#111111"
+                android:fontFamily="@font/jura_bold"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

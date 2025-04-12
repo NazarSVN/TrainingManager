@@ -1,8 +1,10 @@
 package com.example.training_manager;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         SetFlags();
         ShowMainPage();
 //        FirstTestPager();
+
     }
 
     private void FirstTestPager() {
@@ -65,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void ShowMainPage(){
         loadFragment(new HomeFragment());
+        ImageView temp = this.findViewById(R.id.bottom_panel);
+        if (temp != null)
+            temp.setImageResource(R.drawable.home_bar);
 
         FrameLayout frameLayout = findViewById(R.id.fragment_container);
         ImageView bottom_panel = findViewById(R.id.bottom_panel);
@@ -80,9 +86,22 @@ public class MainActivity extends AppCompatActivity {
             iconCalendar.setVisibility(View.VISIBLE);
         }
 
-        iconHome.setOnClickListener(v -> loadFragment(new HomeFragment()));
-        iconHot.setOnClickListener(v -> loadFragment(new FireFragment()));
-        iconCalendar.setOnClickListener(v -> loadFragment(new CalendarFragment()));
+        ImageView i = this.findViewById(R.id.bottom_panel);
+        if (i == null)
+            return;
+
+        iconHome.setOnClickListener(v -> {
+            loadFragment(new HomeFragment());
+            i.setImageResource(R.drawable.home_bar);
+        });
+        iconHot.setOnClickListener(v -> {
+            loadFragment(new FireFragment());
+            i.setImageResource(R.drawable.fire_bar);
+        });
+        iconCalendar.setOnClickListener(v -> {
+            loadFragment(new CalendarFragment());
+            i.setImageResource(R.drawable.calendar_bar);
+        });
     }
 
     private void SetFlags() {
@@ -91,21 +110,20 @@ public class MainActivity extends AppCompatActivity {
         WindowCompat.setDecorFitsSystemWindows(window, false);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             getWindow().getAttributes().layoutInDisplayCutoutMode =
-                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES; }
+                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsController insetsController = window.getInsetsController();
             if (insetsController != null) {
-                insetsController.hide(WindowInsets.Type.systemBars());
-                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                insetsController.show(WindowInsets.Type.statusBars());
+                insetsController.hide(WindowInsets.Type.navigationBars());
             }
         } else {
             window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             window.getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
                             View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                            View.SYSTEM_UI_FLAG_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
             );
         }

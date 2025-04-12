@@ -7,10 +7,12 @@ public class PollManager extends AppCompatActivity {
     private static PollManager instance;
 
     public String Gender = ""; //MALE FEMALE
+
     public String Name = "";
     public String YearBirthday = "";
     public String Weight = "";
     public String Height = "";
+
     public String Goal = "";
     public String Experience = "";
     public String BenchPress = "";
@@ -70,5 +72,9 @@ public class PollManager extends AppCompatActivity {
     public void onClickFemaleGender(ViewPager2 pager, int pageNumber) {
         Gender = "FEMALE";
         pager.setCurrentItem(pageNumber + 1, true);
+    }
+
+    public boolean UpdateData(String name, String surname, String weight, String height, String years){
+        return true;
     }
 }

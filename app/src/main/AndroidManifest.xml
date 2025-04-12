@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Training_manager"
         tools:targetApi="31">
         <activity
+            android:name=".testact"
+            android:exported="false"
+            android:label="@string/title_activity_testact"
+            android:theme="@style/Theme.Training_manager" />
+        <activity
             android:name=".FireFragment"
             android:exported="false" />
         <activity

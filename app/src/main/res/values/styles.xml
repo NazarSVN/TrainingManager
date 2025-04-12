@@ -2,7 +2,7 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowFullscreen">false</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
     </style>
@@ -42,4 +42,10 @@
         <item name="android:typeface">monospace</item>
         <item name="android:fontFamily">@font/jura_bold</item>
     </style>
+
+    <style name="CustomDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@drawable/dialog_background</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+
 </resources>
