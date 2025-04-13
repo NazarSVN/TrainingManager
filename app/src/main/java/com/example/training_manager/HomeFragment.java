@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,7 +48,6 @@ public class HomeFragment extends Fragment {
             }
         }).attach();
 
-
         FrameLayout btnOpenEdit = rootView.findViewById(R.id.btnEdit);
         if (btnOpenEdit != null){
             btnOpenEdit.setOnClickListener(v -> {
@@ -58,6 +58,13 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             });
         }
+
+        TextView hello = rootView.findViewById(R.id.helloText);
+        hello.setText("Hello, "+PollManager.getInstance().Name);
+
+        PollManager.getInstance().setOnNameChangeListener(newName -> {
+            hello.setText("Hello, "+ newName);
+        });
 
         return rootView;
     }

@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/jura_bold"
-            android:text="Назаренко Владислав"
+            android:text="Владислав"
             android:textColor="#FFFFFF"
             android:textSize="34sp" />
 

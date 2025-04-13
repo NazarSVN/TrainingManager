@@ -114,31 +114,7 @@
                     android:src="@drawable/icon_edit" />
             </LinearLayout>
 
-            <!-- Первый элемент: фамилия -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="4dp"
-                android:id="@+id/userSurname">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/jura_bold"
-                    android:text="Назаренко"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:id="@+id/tvUserSurname"/>
-                <ImageView
-                    android:id="@+id/editProfileSurname"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/icon_edit"
-                    android:contentDescription="@string/edit_profile"
-                    />
-            </LinearLayout>
+
 
             <!-- Первый элемент: Вес -->
             <LinearLayout
@@ -268,19 +244,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/jura_bold"
-                android:text="Ім'я"
-                android:layout_weight="0.1"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:gravity="bottom"/>
-
-            <TextView
-                android:id="@+id/surname_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jura_bold"
-                android:text="Фамілія"
-                android:layout_weight="0.4"
+                android:text="Нік"
+                android:layout_weight="0.5"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:gravity="bottom"/>
