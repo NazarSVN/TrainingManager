@@ -6,6 +6,8 @@ coreSplashscreen = "1.0.1"
 dotlottieAndroid = "0.5.0"
 googleMaterial = "1.4.0"
 googleMaterialVersion = "1.6.1"
+graphview = "4.2.2'"
+graphviewVersion = "4.2.2"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -15,6 +17,7 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 animationCoreAndroid = "1.7.8"
 materialVersion = "1.8.0"
+mpandroidchart = "v3.1.0"
 viewpager2 = "1.1.0"
 kotlin = "1.9.0"
 lifecycleRuntimeKtx = "2.8.7"
@@ -26,6 +29,8 @@ constraintlayout-v220beta01 = { module = "androidx.constraintlayout:constraintla
 constraintlayout-v221 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidxConstraintlayout" }
 core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 dotlottie-android = { module = "com.github.LottieFiles:dotlottie-android", version.ref = "dotlottieAndroid" }
+graphview = { module = "com.jjoe64:graphview", version.ref = "graphview" }
+graphview-v422 = { module = "com.jjoe64:graphview", version.ref = "graphviewVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -37,6 +42,7 @@ animation-core-android = { group = "androidx.compose.animation", name = "animati
 material-v140 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 material-v161 = { module = "com.google.android.material:material", version.ref = "googleMaterialVersion" }
 material-v180 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
