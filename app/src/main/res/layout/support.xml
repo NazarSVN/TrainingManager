@@ -23,7 +23,7 @@
                 android:layout_margin="16dp"
                 android:layout_gravity="center"
                 android:elevation="4dp"
-                android:backgroundTint="#2d3c36"
+                android:backgroundTint="#353D36"
                 android:clipToOutline="true"
                 android:background="@drawable/rounded_bg">
 
