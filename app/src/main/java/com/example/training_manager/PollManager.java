@@ -3,8 +3,6 @@ package com.example.training_manager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import java.time.Year;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Calendar;
 

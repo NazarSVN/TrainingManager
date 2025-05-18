@@ -63,16 +63,14 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.animation.core.android)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
     implementation(libs.core.splashscreen)
     implementation (libs.viewpager2)
 
     implementation ("com.android.support.constraint:constraint-layout:1.1.3")
     implementation (libs.material.v140)
-
     implementation ("io.github.ShawnLin013:number-picker:2.4.13")
-
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    implementation ("com.applandeo:material-calendar-view:1.9.0")
+
 }

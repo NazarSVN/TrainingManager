@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Training_manager"
         tools:targetApi="31" >
+        <activity android:name=".TrainingPageView" />
         <activity
             android:name=".DialogStartActivity"
             android:exported="false"

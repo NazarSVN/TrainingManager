@@ -1,6 +1,6 @@
 package com.example.training_manager;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -9,34 +9,23 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
 
-public class DialogStartActivity extends AppCompatActivity {
+public class TrainingPageView extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_start_activity);
+        setContentView(R.layout.training_page_view);
         SetupPage();
 
-        ImageView backArrow = findViewById(R.id.backArrow);
-        if (backArrow != null){
-            backArrow.setOnClickListener(v -> {
+        ImageView btn_cancel = findViewById(R.id.btn_cancel);
+        if (btn_cancel != null){
+            btn_cancel.setOnClickListener(v -> {
                 finish();
             });
         }
-
-        TextView startButton = findViewById((R.id.startButton));
-        if (startButton != null){
-            startButton.setOnClickListener(v -> {
-                Intent intent = new Intent(DialogStartActivity.this, TrainingPageView.class);
-                startActivity(intent);
-            });
-        }
     }
-
     private void SetupPage() {
         Window window = getWindow();
 

@@ -2,6 +2,7 @@ package com.example.training_manager;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -22,6 +23,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,10 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Locale locale = new Locale("uk"); // или "en", "fr", "de" и т.д.
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
         SetFlags();
         ShowMainPage();
 //        FirstTestPager();
-
     }
 
     private void FirstTestPager() {
